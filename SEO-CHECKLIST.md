@@ -15,7 +15,7 @@ Checklist operativa da seguire DOPO la pubblicazione del sito. Le attività tecn
 ## Settimana 1-2 — Google Business Profile (fondamentale per il locale)
 
 - [ ] Creare il profilo su [business.google.com](https://business.google.com): nome "Noleggio Autoscale", categoria "Servizio di noleggio attrezzature" (+ categorie secondarie pertinenti)
-- [ ] Indirizzo Corso Svizzera 116, Torino — coerente al carattere con il footer del sito (NAP consistency)
+- [ ] Indirizzo Via Italia 88, Settimo Torinese — coerente al carattere con il footer del sito (NAP consistency)
 - [ ] Completare: orari (lun-dom 8-20), telefono, link al sito, area di servizio (Torino + comuni della cintura)
 - [ ] Caricare foto reali dei mezzi (minimo 10): sono il fattore n°1 di conversione della scheda
 - [ ] Pubblicare un primo post di presentazione

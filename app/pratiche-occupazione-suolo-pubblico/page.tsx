@@ -89,7 +89,7 @@ export default function PraticheOspPage() {
 
       <article className="mx-auto max-w-4xl px-4 py-12">
         <p className="mb-4 leading-relaxed text-gray-700">
-          Ogni volta che un'autoscala, un'autogrù o un camion per il trasloco
+          Ogni volta che un'autoscala o un camion per il trasloco
           occupano — anche solo in parte — carreggiata, marciapiede o
           parcheggi, serve l'<strong>autorizzazione del Comune</strong>. La
           pratica richiede domanda, planimetria, pagamento del canone e posa
@@ -139,9 +139,9 @@ export default function PraticheOspPage() {
         </h2>
         <p className="mb-4 leading-relaxed text-gray-700">
           Serve praticamente sempre quando si lavora da strada pubblica:
-          traslochi con autoscala, sollevamenti con autogrù, ponteggi, cantieri
-          edili, ma anche il semplice furgone in seconda fila per un carico
-          prolungato. Non serve solo se l'intervento avviene interamente su
+          traslochi con autoscala, ponteggi, cantieri edili, ma anche il
+          semplice furgone in seconda fila per un carico prolungato. Non
+          serve solo se l'intervento avviene interamente su
           area privata (cortile, giardino, piazzale aziendale). Nel dubbio,
           chiedici: la valutazione è gratuita. Per approfondire, leggi la
           nostra guida{" "}

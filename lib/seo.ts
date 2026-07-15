@@ -9,7 +9,7 @@ import { absoluteUrl, business } from "./config";
 export function buildMetadata(opts: {
   title: string;
   description: string;
-  /** Path relativo della pagina, es. "/noleggio-autogru" */
+  /** Path relativo della pagina, es. "/noleggio-autoscale" */
   path: string;
   ogType?: "website" | "article";
 }): Metadata {

@@ -21,11 +21,6 @@ export const metadata: Metadata = buildMetadata({
 
 const faq = [
   {
-    question: "Che differenza c'è tra autoscala e piattaforma aerea?",
-    answer:
-      "L'autoscala è dotata di una scala telescopica con carrello portacose: è lo strumento ideale per movimentare mobili e materiali ai piani alti (traslochi, sgomberi). La piattaforma aerea solleva invece le persone in un cestello ed è pensata per lavorare in quota (manutenzioni, potature, facciate).",
-  },
-  {
     question: "Serve un permesso per posizionare l'autoscala in strada?",
     answer:
       "Se il mezzo occupa carreggiata, marciapiede o parcheggi pubblici serve il permesso di occupazione suolo pubblico rilasciato dal Comune. Ci occupiamo noi dell'intera pratica, compresa la segnaletica di divieto di sosta da posizionare 48 ore prima.",
@@ -68,7 +63,7 @@ export default function NoleggioAutoscalePage() {
       <PageHero
         eyebrow="Noleggio autoscale"
         title={service.h1}
-        description="Autoscale da 18 a 45 metri con operatore qualificato per traslochi, sgomberi, potature e lavori in quota. Interveniamo in tutta Torino e provincia, 7 giorni su 7."
+        description="Autoscale dal 1° al 12° piano con operatore qualificato per traslochi, sgomberi, potature e lavori in quota. Interveniamo in tutta Torino e provincia, 7 giorni su 7."
       />
 
       <article className="mx-auto max-w-7xl px-4 py-12">
@@ -84,7 +79,7 @@ export default function NoleggioAutoscalePage() {
               sicurezza.
             </p>
             <p className="mb-4 leading-relaxed text-gray-700">
-              La nostra flotta copre <strong>altezze da 18 a 45 metri</strong>:
+              La nostra flotta copre <strong>dal 1° al 12° piano</strong>:
               dal monolocale al secondo piano del centro storico di Torino fino
               ai condomini più alti della periferia. Tutti i mezzi sono
               revisionati e sottoposti alle verifiche periodiche di legge, e il
@@ -128,9 +123,9 @@ export default function NoleggioAutoscalePage() {
             </p>
             <p className="mb-4 leading-relaxed text-gray-700">
               Non sai che altezza ti serve? Come regola pratica conta circa 3
-              metri per piano: fino al 5° piano è sufficiente un'autoscala da
-              18 metri, fino all'8° piano serve la 25 metri, oltre si passa a
-              35 o 45 metri. Se il mezzo non può accostarsi al palazzo (dehors,
+              metri per piano: fino al 6° piano è sufficiente un'autoscala da
+              24 metri, fino al 9° piano serve la 34 metri, oltre si passa
+              alla 45 metri. Se il mezzo non può accostarsi al palazzo (dehors,
               alberi, auto in sosta) meglio abbondare in altezza: al telefono
               ti consigliamo il mezzo giusto, e per i casi complessi facciamo
               un sopralluogo gratuito.

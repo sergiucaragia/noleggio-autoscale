@@ -113,7 +113,7 @@ export default async function BlogPostPage({
 
         <div className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
           <p className="mb-2 font-bold text-brand-900">
-            Ti serve un'autoscala o una piattaforma?
+            Ti serve un'autoscala?
           </p>
           <p className="text-gray-700">
             Preventivo gratuito in giornata per Torino e provincia:{" "}

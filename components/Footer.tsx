@@ -12,9 +12,9 @@ export default function Footer() {
         <div>
           <p className="mb-3 text-lg font-bold text-white">{business.name}</p>
           <p className="mb-4 text-sm leading-relaxed">
-            Noleggio autoscale, autogrù e piattaforme aeree con operatore a
-            Torino e provincia. Mezzi revisionati, intervento rapido,
-            preventivo gratuito.
+            Noleggio autoscale e transenne con operatore a Torino e
+            provincia. Mezzi revisionati, intervento rapido, preventivo
+            gratuito.
           </p>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">

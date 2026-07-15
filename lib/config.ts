@@ -16,14 +16,14 @@ export const business = {
   whatsapp: "393208921103",
   email: "stefanotraslochitorino@gmail.com",
   address: {
-    street: "Corso Svizzera 116",
-    city: "Torino",
+    street: "Via Italia 88",
+    city: "Settimo Torinese",
     province: "TO",
-    postalCode: "10143",
+    postalCode: "10036",
     region: "Piemonte",
     country: "IT",
   },
-  vatNumber: "[INSERIRE P.IVA]", // TODO: inserire Partita IVA reale
+  vatNumber: "12798890013",
   openingHours: {
     days: "Lunedì – Domenica",
     hours: "8:00 – 20:00",
@@ -31,9 +31,9 @@ export const business = {
     schema: "Mo-Su 08:00-20:00",
   },
   geo: {
-    // Coordinate approssimative di Corso Svizzera 116, Torino
-    latitude: 45.0872,
-    longitude: 7.6572,
+    // TODO: verificare le coordinate esatte di Via Italia 88, Settimo Torinese
+    latitude: 45.1409,
+    longitude: 7.7692,
   },
 } as const;
 

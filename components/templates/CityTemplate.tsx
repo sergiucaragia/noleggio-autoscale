@@ -24,7 +24,7 @@ export default function CityTemplate({ city }: { city: City }) {
     },
     {
       question: `In quanto tempo arrivate a ${city.name}?`,
-      answer: `La nostra sede è in ${business.address.street} a Torino: per ${city.name} il tempo di trasferimento è ${city.travelTime}. Con la prenotazione anticipata garantiamo la fascia oraria concordata.`,
+      answer: `La nostra sede è in ${business.address.street} a ${business.address.city}: per ${city.name} il tempo di trasferimento è ${city.travelTime}. Con la prenotazione anticipata garantiamo la fascia oraria concordata.`,
     },
     ...(city.extraFaq ? [city.extraFaq] : []),
   ];
@@ -36,7 +36,7 @@ export default function CityTemplate({ city }: { city: City }) {
       <JsonLd
         data={serviceSchema({
           name: `Noleggio autoscale a ${city.name}`,
-          description: `Noleggio autoscale, autogrù e piattaforme aeree a ${city.name} con operatore.`,
+          description: `Noleggio autoscale e transenne a ${city.name} con operatore.`,
           path: `/${city.slug}`,
           areaName: city.name,
         })}
@@ -53,7 +53,7 @@ export default function CityTemplate({ city }: { city: City }) {
       <PageHero
         eyebrow="Dove operiamo"
         title={`Noleggio autoscale a ${city.name}`}
-        description={`Autoscale da 18 a 45 metri, autogrù e piattaforme aeree con operatore a ${city.name} e dintorni. ${city.travelTime}.`}
+        description={`Autoscale dal 1° al 12° piano con operatore a ${city.name} e dintorni. ${city.travelTime}.`}
       />
 
       <article className="mx-auto max-w-7xl px-4 py-12">
@@ -62,7 +62,7 @@ export default function CityTemplate({ city }: { city: City }) {
             <p className="mb-4 leading-relaxed text-gray-700">
               Cerchi un'<strong>autoscala a noleggio a {city.name}</strong> per
               un trasloco, una potatura o un lavoro in quota? Interveniamo a{" "}
-              {city.name} con mezzi da 18 a 45 metri e operatore qualificato
+              {city.name} con mezzi dal 1° al 12° piano e operatore qualificato
               incluso: {city.travelTime}, preventivo gratuito in giornata e
               gestione completa di eventuali permessi comunali.
             </p>

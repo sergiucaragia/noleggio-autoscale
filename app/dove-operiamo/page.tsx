@@ -11,7 +11,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = buildMetadata({
   title: "Dove Operiamo: Torino e Provincia | Noleggio Autoscale",
   description:
-    "Noleggio autoscale, autogrù e piattaforme aeree a Torino e in tutta la provincia: Moncalieri, Rivoli, Collegno, Nichelino e altri comuni della cintura.",
+    "Noleggio autoscale e transenne a Torino e in tutta la provincia: Moncalieri, Rivoli, Collegno, Nichelino e altri comuni della cintura.",
   path: "/dove-operiamo",
 });
 
@@ -28,7 +28,7 @@ export default function DoveOperiamoPage() {
       <PageHero
         eyebrow="Zone servite"
         title="Dove operiamo: Torino e provincia"
-        description={`La nostra sede è in ${business.address.street} a Torino: da qui raggiungiamo rapidamente tutta la città e i comuni della cintura, 7 giorni su 7.`}
+        description={`La nostra sede è in ${business.address.street} a ${business.address.city}: da qui raggiungiamo rapidamente Torino e tutti i comuni della cintura, 7 giorni su 7.`}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12">

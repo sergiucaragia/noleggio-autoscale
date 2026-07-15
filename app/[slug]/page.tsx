@@ -9,7 +9,7 @@ import CityTemplate from "@/components/templates/CityTemplate";
 /**
  * Route dinamica di primo livello per gli slug SEO "piatti" in stile
  * falanoleggi.it:
- *   /noleggio-autoscala-18-metri/  → scheda altezza (autoscalaModels)
+ *   /noleggio-autoscala-24-metri/  → scheda altezza (autoscalaModels)
  *   /noleggio-autoscale-torino/    → pagina città (cities)
  *
  * Per aggiungere una città o un'altezza basta aggiungere la voce nel
@@ -47,7 +47,7 @@ export async function generateMetadata({
   if (city) {
     return buildMetadata({
       title: `Noleggio Autoscale a ${city.name} | Noleggio Autoscale`,
-      description: `Noleggio autoscale a ${city.name}: mezzi da 18 a 45 metri con operatore per traslochi, potature e lavori in quota. Preventivo gratuito in giornata.`,
+      description: `Noleggio autoscale a ${city.name}: mezzi dal 1° al 12° piano con operatore per traslochi, potature e lavori in quota. Preventivo gratuito in giornata.`,
       path: `/${city.slug}`,
     });
   }

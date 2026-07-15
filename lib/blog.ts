@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "L'altezza dichiarata di un'autoscala si misura in verticale, ma il mezzo quasi mai può posizionarsi esattamente sotto il balcone. Marciapiedi larghi, aiuole, dehors, alberate, auto in sosta, cortili interni: ogni metro di distanza orizzontale dal palazzo \"consuma\" altezza utile, perché la scala lavora in diagonale. Un'autoscala da 25 metri posizionata a 8-10 metri dall'edificio raggiunge comodamente un sesto piano, non un ottavo.",
+        text: "L'altezza dichiarata di un'autoscala si misura in verticale, ma il mezzo quasi mai può posizionarsi esattamente sotto il balcone. Marciapiedi larghi, aiuole, dehors, alberate, auto in sosta, cortili interni: ogni metro di distanza orizzontale dal palazzo \"consuma\" altezza utile, perché la scala lavora in diagonale. Un'autoscala da 34 metri posizionata a 8-10 metri dall'edificio raggiunge comodamente un sesto piano, non un nono.",
       },
       {
         type: "p",
@@ -91,10 +91,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Autoscala 18 metri — fino al 5° piano. Compatta, perfetta per centri storici e vie strette. La scelta standard per la maggior parte dei traslochi in palazzi d'epoca.",
-          "Autoscala 25 metri — fino all'8° piano. La più richiesta in assoluto: copre quasi tutti i condomini della cintura torinese e mantiene un ingombro gestibile.",
-          "Autoscala 35 metri — oltre il 10° piano. Per i grandi condomini degli anni '60 e '70 e per lavorare con ampi margini di sbraccio quando il mezzo deve stare lontano dalla facciata.",
-          "Autoscala 45 metri — oltre il 14° piano. Torri residenziali, edifici direzionali, interventi speciali. Richiede spazio di manovra e un sopralluogo preventivo.",
+          "Autoscala 24 metri — fino al 6° piano. Compatta, perfetta per centri storici e vie strette. La scelta standard per la maggior parte dei traslochi in palazzi d'epoca.",
+          "Autoscala 34 metri — fino al 9° piano. La più richiesta in assoluto: copre quasi tutti i condomini della cintura torinese e mantiene un ingombro gestibile.",
+          "Autoscala 45 metri — fino al 12° piano. La massima altezza della flotta: grandi condomini, torri residenziali e interventi che richiedono ampi margini di sbraccio. Richiede spazio di manovra e un sopralluogo preventivo.",
         ],
       },
       {
@@ -103,7 +102,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Il costo del noleggio cresce con l'altezza del mezzo, ma meno di quanto si pensi: la differenza tra una 18 e una 25 metri è contenuta, mentre i mezzi da 35 e 45 metri hanno costi di trasferimento e stabilizzazione più alti. Il vero errore economico è scegliere un mezzo troppo basso: se il giorno del trasloco la scala non arriva al piano, l'intervento va riprogrammato con un mezzo più grande e i costi raddoppiano. Nel dubbio tra due altezze, scegli sempre la maggiore: la differenza di prezzo è minima rispetto al rischio.",
+        text: "Il costo del noleggio cresce con l'altezza del mezzo, ma meno di quanto si pensi: la differenza tra una 24 e una 34 metri è contenuta, mentre la 45 metri ha costi di trasferimento e stabilizzazione più alti. Il vero errore economico è scegliere un mezzo troppo basso: se il giorno del trasloco la scala non arriva al piano, l'intervento va riprogrammato con un mezzo più grande e i costi raddoppiano. Nel dubbio tra due altezze, scegli sempre la maggiore: la differenza di prezzo è minima rispetto al rischio.",
       },
       {
         type: "h2",

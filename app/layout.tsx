@@ -25,11 +25,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Noleggio Autoscale a Torino | Autoscale, Autogrù e Piattaforme",
+    default: "Noleggio Autoscale a Torino | Noleggio Autoscale",
     template: `%s | ${business.name}`,
   },
   description:
-    "Noleggio autoscale, autogrù e piattaforme aeree con operatore a Torino e provincia. Preventivo gratuito in giornata: 320 892 1103.",
+    "Noleggio autoscale e transenne con operatore a Torino e provincia. Preventivo gratuito in giornata: 320 892 1103.",
   openGraph: {
     siteName: business.name,
     locale: "it_IT",

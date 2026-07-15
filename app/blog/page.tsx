@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = buildMetadata({
   title: "Blog: Guide su Autoscale e Lavori in Quota | Noleggio Autoscale",
   description:
-    "Guide pratiche su noleggio autoscale, piattaforme aeree, permessi comunali e lavori in quota: consigli utili da chi lavora ogni giorno sul campo.",
+    "Guide pratiche su noleggio autoscale, permessi comunali e lavori in quota: consigli utili da chi lavora ogni giorno sul campo.",
   path: "/blog",
 });
 
@@ -26,7 +26,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog"
         title="Blog e guide pratiche"
-        description="Consigli concreti su autoscale, piattaforme aeree, permessi e lavori in quota, scritti da chi è sul campo ogni giorno."
+        description="Consigli concreti su autoscale, permessi e lavori in quota, scritti da chi è sul campo ogni giorno."
       />
 
       <section className="mx-auto max-w-4xl px-4 py-12">

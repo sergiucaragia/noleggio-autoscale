@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Contatti e Preventivi | Noleggio Autoscale Torino",
   description:
-    "Contatta Noleggio Autoscale: telefono 320 892 1103, WhatsApp e form preventivo. Sede in Corso Svizzera 116, Torino. Attivi 7 giorni su 7, 8-20.",
+    "Contatta Noleggio Autoscale: telefono 320 892 1103, WhatsApp e form preventivo. Sede in Via Italia 88, Settimo Torinese. Attivi 7 giorni su 7, 8-20.",
   path: "/contatti",
 });
 

@@ -12,7 +12,7 @@ import { CheckIcon } from "@/components/icons";
 export const metadata: Metadata = buildMetadata({
   title: "Chi Siamo | Noleggio Autoscale Torino",
   description:
-    "Noleggio Autoscale: mezzi per lavori in quota con operatore a Torino. Sede in Corso Svizzera 116, attivi 7 giorni su 7 con mezzi revisionati e certificati.",
+    "Noleggio Autoscale: mezzi per lavori in quota con operatore a Torino e provincia. Sede in Via Italia 88, Settimo Torinese, attivi 7 giorni su 7 con mezzi revisionati e certificati.",
   path: "/chi-siamo",
 });
 
@@ -39,16 +39,16 @@ export default function ChiSiamoPage() {
         <p className="mb-4 leading-relaxed text-gray-700">
           <strong>{business.name}</strong> nasce dall'esperienza maturata sul
           campo nel mondo dei traslochi e dei lavori in quota a Torino. Ogni
-          giorno portiamo autoscale, autogrù e piattaforme aeree nei cortili,
-          nelle vie del centro e nei cantieri della città e della provincia,
+          giorno portiamo le nostre autoscale nei cortili, nelle vie del
+          centro e nei cantieri della città e della provincia,
           con un obiettivo semplice: farti lavorare (o traslocare) in
           sicurezza, in orario e senza pensieri burocratici.
         </p>
         <p className="mb-4 leading-relaxed text-gray-700">
-          La nostra sede operativa è in {business.address.street} a Torino, in
-          zona San Donato: una posizione centrale che ci permette di
-          raggiungere rapidamente ogni quartiere della città e i comuni della
-          cintura. Siamo attivi{" "}
+          La nostra sede operativa è in {business.address.street} a{" "}
+          {business.address.city}: una posizione strategica che ci permette
+          di raggiungere rapidamente Torino e tutti i comuni della cintura.
+          Siamo attivi{" "}
           <strong>
             {business.openingHours.days.toLowerCase()},{" "}
             {business.openingHours.hours}

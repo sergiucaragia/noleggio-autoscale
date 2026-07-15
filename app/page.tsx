@@ -12,9 +12,9 @@ import CTASection from "@/components/CTASection";
 import { CheckIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Noleggio Autoscale a Torino | Autoscale, Autogrù e Piattaforme",
+  title: "Noleggio Autoscale a Torino | Noleggio Autoscale",
   description:
-    "Noleggio autoscale da 18 a 45 metri, autogrù e piattaforme aeree con operatore a Torino e provincia. Preventivo gratuito in giornata: 320 892 1103.",
+    "Noleggio autoscale dal 1° al 12° piano con operatore a Torino e provincia. Preventivo gratuito in giornata: 320 892 1103.",
   path: "/",
 });
 
@@ -32,7 +32,7 @@ const homeFaq = [
   {
     question: "In quanto tempo potete intervenire?",
     answer:
-      "Siamo operativi 7 giorni su 7, dalle 8:00 alle 20:00, con sede a Torino in Corso Svizzera 116. Per gli interventi in città e prima cintura riusciamo spesso a intervenire entro 24-48 ore, salvo il tempo necessario per eventuali permessi comunali.",
+      "Siamo operativi 7 giorni su 7, dalle 8:00 alle 20:00, con sede in Via Italia 88 a Settimo Torinese. Per gli interventi in città e prima cintura riusciamo spesso a intervenire entro 24-48 ore, salvo il tempo necessario per eventuali permessi comunali.",
   },
   {
     question: "Vi occupate voi dei permessi di occupazione suolo pubblico?",
@@ -42,7 +42,7 @@ const homeFaq = [
   {
     question: "Che altezza di autoscala serve per il mio piano?",
     answer:
-      "Come regola pratica: fino al 5° piano basta un'autoscala da 18 metri, fino all'8° piano ne serve una da 25 metri, oltre servono i 35 o 45 metri. Al telefono ti aiutiamo a scegliere il mezzo giusto in base a piano, distanza dal palazzo ed eventuali ostacoli.",
+      "Come regola pratica: fino al 6° piano basta un'autoscala da 24 metri, fino al 9° piano ne serve una da 34 metri, oltre serve la 45 metri. Al telefono ti aiutiamo a scegliere il mezzo giusto in base a piano, distanza dal palazzo ed eventuali ostacoli.",
   },
 ];
 
@@ -73,44 +73,48 @@ export default function Home() {
           dell'autoscala in azione (next/image con priority). Le foto reali
           dei mezzi aumentano fiducia e conversioni. */}
       <section className="bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
-          <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-200 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
-              Torino e provincia — 7 giorni su 7
-            </p>
-            <h1 className="mb-5 text-3xl font-black leading-tight sm:text-5xl">
-              Noleggio autoscale a Torino:
-              <br className="hidden sm:block" /> da 18 a 45 metri, con operatore
-            </h1>
-            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-brand-100">
-              Traslochi ai piani alti, potature, lavori in quota e sollevamenti:
-              autoscale, autogrù e piattaforme aeree con operatore qualificato.
-              Preventivo gratuito in giornata, pratiche comunali incluse.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href={links.tel}
-                className="flex items-center justify-center gap-2 rounded-lg bg-accent-600 px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-accent-700"
-              >
-                <PhoneIcon className="h-5 w-5" />
-                Chiama {business.phoneDisplay}
-              </a>
-              <a
-                href={links.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-lg bg-wa px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-wa-dark"
-              >
-                <WhatsAppIcon className="h-5 w-5" />
-                WhatsApp
-              </a>
-              <Link
-                href="/contatti/"
-                className="flex items-center justify-center rounded-lg border-2 border-white/60 px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-white/10"
-              >
-                Preventivo online
-              </Link>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-start lg:gap-12">
+            <div>
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-200 backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
+                Torino e provincia — 7 giorni su 7
+              </p>
+              <h1 className="mb-5 text-3xl font-black leading-tight sm:text-5xl">
+                Noleggio autoscale a Torino:
+                <br className="hidden sm:block" /> dal 1° al 12° piano, con operatore
+              </h1>
+              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-brand-100">
+                Traslochi ai piani alti, potature e lavori in quota: autoscale
+                con operatore qualificato. Preventivo gratuito in giornata,
+                pratiche comunali incluse.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={links.tel}
+                  className="flex items-center justify-center gap-2 rounded-lg bg-accent-600 px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-accent-700"
+                >
+                  <PhoneIcon className="h-5 w-5" />
+                  Chiama {business.phoneDisplay}
+                </a>
+                <a
+                  href={links.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-wa px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-wa-dark"
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* Form preventivo, sempre visibile fin dalla hero */}
+            <div id="preventivo" className="lg:pt-1">
+              <p className="mb-3 text-lg font-bold text-white">
+                Richiedi un preventivo gratuito
+              </p>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -122,10 +126,10 @@ export default function Home() {
           I nostri servizi di noleggio
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
-          Un unico interlocutore per lavori in quota, sollevamenti e
-          delimitazione di aree di cantiere a Torino e provincia.
+          Un unico interlocutore per lavori in quota e delimitazione di aree
+          di cantiere a Torino e provincia.
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           {services.map((s) => (
             <ServiceCard
               key={s.slug}
@@ -145,10 +149,10 @@ export default function Home() {
             Autoscale per ogni altezza
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
-            Dal 2° piano del centro storico ai grattacieli: scegli l'altezza
+            Dal 1° piano del centro storico ai grattacieli: scegli l'altezza
             giusta, al resto pensiamo noi.
           </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
             {autoscalaModels.map((m) => (
               <Link
                 key={m.slug}
@@ -199,8 +203,8 @@ export default function Home() {
             Dove operiamo
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
-            Sede operativa in Corso Svizzera 116 a Torino, interveniamo in
-            tutta la città e nei comuni della cintura.
+            Sede operativa in Via Italia 88 a Settimo Torinese, interveniamo
+            in tutta Torino e nei comuni della cintura.
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {cities.map((c) => (
@@ -269,18 +273,6 @@ export default function Home() {
             Leggi tutte le domande frequenti →
           </Link>
         </p>
-      </section>
-
-      {/* FORM CONTATTI */}
-      <section id="preventivo" className="mx-auto max-w-3xl px-4 py-16">
-        <h2 className="mb-3 text-center text-2xl font-bold text-brand-900 sm:text-3xl">
-          Richiedi un preventivo gratuito
-        </h2>
-        <p className="mx-auto mb-8 max-w-xl text-center text-gray-600">
-          Compila il modulo: ti ricontattiamo entro poche ore con un preventivo
-          su misura, senza impegno.
-        </p>
-        <ContactForm />
       </section>
 
       <CTASection />

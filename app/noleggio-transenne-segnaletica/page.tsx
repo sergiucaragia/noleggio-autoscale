@@ -11,7 +11,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import { CheckIcon } from "@/components/icons";
 
-const service = services[3]; // noleggio-transenne-segnaletica
+const service = services[1]; // noleggio-transenne-segnaletica
 
 export const metadata: Metadata = buildMetadata({
   title: service.metaTitle,
@@ -123,20 +123,13 @@ export default function NoleggioTransenneSegnaleticaPage() {
               indirizzo.
             </p>
             <p className="mb-4 leading-relaxed text-gray-700">
-              Il noleggio di transenne e segnaletica è spesso abbinato ai
-              nostri servizi di{" "}
+              Il noleggio di transenne e segnaletica è spesso abbinato al
+              nostro servizio di{" "}
               <Link
                 href="/noleggio-autoscale/"
                 className="font-semibold text-brand-600 hover:underline"
               >
                 noleggio autoscale
-              </Link>{" "}
-              e{" "}
-              <Link
-                href="/noleggio-autogru/"
-                className="font-semibold text-brand-600 hover:underline"
-              >
-                autogrù
               </Link>
               : in un unico preventivo hai mezzo, permesso e area delimitata.
             </p>

@@ -18,9 +18,8 @@ Build di produzione: `npm run build` — Lint: `npm run lint`
 
 Tutti i dati aziendali sono centralizzati in **`lib/config.ts`**: modificandoli lì si aggiornano header, footer, schema JSON-LD, pagina contatti e CTA. Da completare:
 
-- [ ] **P.IVA** (`vatNumber`) — attualmente placeholder `[INSERIRE P.IVA]`
 - [ ] **Ragione sociale completa** (`legalName`)
-- [ ] **Coordinate geografiche** (`geo`) — attualmente approssimative
+- [ ] **Coordinate geografiche** (`geo`) — attualmente approssimative, da verificare per Via Italia 88, Settimo Torinese
 
 ### 2. Dominio
 

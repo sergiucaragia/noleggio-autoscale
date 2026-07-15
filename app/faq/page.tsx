@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = buildMetadata({
   title: "Domande Frequenti (FAQ) | Noleggio Autoscale Torino",
   description:
-    "Risposte alle domande più frequenti su noleggio autoscale, autogrù e piattaforme aeree: costi, permessi, altezze, tempi di intervento a Torino.",
+    "Risposte alle domande più frequenti su noleggio autoscale e transenne: costi, permessi, altezze, tempi di intervento a Torino.",
   path: "/faq",
 });
 
@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: "Che altezza di autoscala serve per il mio piano?",
     answer:
-      "Regola pratica: circa 3 metri per piano, più margine di sicurezza. Fino al 5° piano basta la 18 metri, fino all'8° piano serve la 25 metri, oltre si passa alla 35 o 45 metri. Se il mezzo non può accostarsi al palazzo, meglio scegliere un'altezza superiore.",
+      "Regola pratica: circa 3 metri per piano, più margine di sicurezza. Fino al 6° piano basta la 24 metri, fino al 9° piano serve la 34 metri, oltre si passa alla 45 metri. Se il mezzo non può accostarsi al palazzo, meglio scegliere un'altezza superiore.",
   },
   {
     question: "In quanto tempo potete intervenire?",
@@ -76,7 +76,7 @@ export default function FaqPage() {
       <PageHero
         eyebrow="Assistenza"
         title="Domande frequenti"
-        description="Tutto quello che c'è da sapere prima di noleggiare un'autoscala, un'autogrù o una piattaforma aerea."
+        description="Tutto quello che c'è da sapere prima di noleggiare un'autoscala o transenne e segnaletica."
       />
 
       <section className="px-4 py-12">
