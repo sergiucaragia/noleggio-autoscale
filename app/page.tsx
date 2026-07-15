@@ -1,14 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-import { business, links } from "@/lib/config";
+import { business, links, availableSlotsThisMonth } from "@/lib/config";
 import { services, autoscalaModels } from "@/lib/services";
 import { cities } from "@/lib/cities";
+import { reviews } from "@/lib/reviews";
 import ServiceCard from "@/components/ServiceCard";
 import CityCard from "@/components/CityCard";
 import FAQAccordion from "@/components/FAQAccordion";
 import ContactForm from "@/components/ContactForm";
 import CTASection from "@/components/CTASection";
+import ReviewsMarquee from "@/components/ReviewsMarquee";
+import CountdownNumber from "@/components/CountdownNumber";
 import { CheckIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
@@ -222,44 +225,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* URGENZA / SLOT DISPONIBILI
+          Numero configurabile in lib/config.ts (availableSlotsThisMonth):
+          aggiornarlo manualmente per riflettere la disponibilità reale. */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <p className="mb-2 text-6xl font-black text-red-600 sm:text-7xl">
+            <CountdownNumber target={availableSlotsThisMonth} from={30} />
+          </p>
+          <h2 className="mb-3 text-2xl font-bold text-brand-900 sm:text-3xl">
+            Ultimi noleggi disponibili questo mese
+          </h2>
+          <div className="mx-auto mb-10 h-px w-24 bg-gray-300" />
+
+          <div id="preventivo-mese" className="mx-auto max-w-xl rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm sm:p-8">
+            <p className="mb-1 text-center text-xl font-bold text-brand-900">
+              Richiedi ora il tuo preventivo gratuito
+            </p>
+            <p className="mb-6 text-center text-gray-600">
+              Ti ricontattiamo entro poche ore dalla tua richiesta
+            </p>
+            <ContactForm idPrefix="mese-" />
+          </div>
+        </div>
+      </section>
+
       {/* RECENSIONI
           TODO: sostituire con recensioni reali (Google Business Profile)
-          appena disponibili. Testi placeholder realistici. */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
+          appena disponibili — vedi lib/reviews.ts */}
+      <section className="py-16">
         <h2 className="mb-10 text-center text-2xl font-bold text-brand-900 sm:text-3xl">
           Cosa dicono i nostri clienti
         </h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              name: "Luca B. — Torino",
-              text: "Trasloco al 7° piano in pieno centro: puntuali, veloci e si sono occupati loro del permesso per la strada. Consigliatissimi.",
-            },
-            {
-              name: "Amministrazione condominiale — Collegno",
-              text: "Usiamo la loro autoscala per le manutenzioni dei nostri stabili. Sempre disponibili, anche nel weekend, e con mezzi in ordine.",
-            },
-            {
-              name: "Giardiniere professionista — Moncalieri",
-              text: "Potature di alberi alti in sicurezza con il loro operatore. Prezzo onesto e preventivo immediato su WhatsApp.",
-            },
-          ].map((review) => (
-            <figure
-              key={review.name}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-            >
-              <p className="mb-3 text-accent-600" aria-label="5 stelle su 5">
-                ★★★★★
-              </p>
-              <blockquote className="mb-4 leading-relaxed text-gray-700">
-                «{review.text}»
-              </blockquote>
-              <figcaption className="text-sm font-semibold text-brand-900">
-                {review.name}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <ReviewsMarquee reviews={reviews} />
       </section>
 
       {/* FAQ */}

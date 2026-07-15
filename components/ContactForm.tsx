@@ -33,7 +33,14 @@ const serviceOptions = [
   "Altro / non so",
 ];
 
-export default function ContactForm() {
+export default function ContactForm({
+  idPrefix = "",
+}: {
+  /** Prefisso per gli id dei campi, necessario se il form è renderizzato
+   * più volte nella stessa pagina (es. hero + sezione countdown) per
+   * evitare id HTML duplicati. */
+  idPrefix?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
     "idle"
   );
@@ -100,11 +107,11 @@ export default function ContactForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className={labelClass}>
+          <label htmlFor={`${idPrefix}name`} className={labelClass}>
             Nome e cognome *
           </label>
           <input
-            id="name"
+            id={`${idPrefix}name`}
             type="text"
             autoComplete="name"
             placeholder="Mario Rossi"
@@ -115,11 +122,11 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="phone" className={labelClass}>
+          <label htmlFor={`${idPrefix}phone`} className={labelClass}>
             Telefono *
           </label>
           <input
-            id="phone"
+            id={`${idPrefix}phone`}
             type="tel"
             autoComplete="tel"
             placeholder="320 123 4567"
@@ -130,11 +137,11 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className={labelClass}>
+          <label htmlFor={`${idPrefix}email`} className={labelClass}>
             Email *
           </label>
           <input
-            id="email"
+            id={`${idPrefix}email`}
             type="email"
             autoComplete="email"
             placeholder="mario.rossi@email.it"
@@ -145,11 +152,11 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="city" className={labelClass}>
+          <label htmlFor={`${idPrefix}city`} className={labelClass}>
             Città dell'intervento *
           </label>
           <input
-            id="city"
+            id={`${idPrefix}city`}
             type="text"
             placeholder="Torino"
             className={inputClass}
@@ -159,11 +166,11 @@ export default function ContactForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="service" className={labelClass}>
+          <label htmlFor={`${idPrefix}service`} className={labelClass}>
             Servizio richiesto *
           </label>
           <select
-            id="service"
+            id={`${idPrefix}service`}
             className={inputClass}
             defaultValue=""
             {...register("service")}
@@ -183,11 +190,11 @@ export default function ContactForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="message" className={labelClass}>
+          <label htmlFor={`${idPrefix}message`} className={labelClass}>
             Note (piano, indirizzo, date, dettagli del lavoro)
           </label>
           <textarea
-            id="message"
+            id={`${idPrefix}message`}
             rows={4}
             placeholder="Es. trasloco al 6° piano in via Roma 10, sabato mattina…"
             className={inputClass}
@@ -197,9 +204,9 @@ export default function ContactForm() {
 
         {/* Honeypot antispam: nascosto agli utenti reali */}
         <div className="hidden" aria-hidden="true">
-          <label htmlFor="website">Non compilare questo campo</label>
+          <label htmlFor={`${idPrefix}website`}>Non compilare questo campo</label>
           <input
-            id="website"
+            id={`${idPrefix}website`}
             type="text"
             tabIndex={-1}
             autoComplete="off"

@@ -3,6 +3,7 @@ import { business, links } from "@/lib/config";
 import { services, autoscalaModels, praticheService } from "@/lib/services";
 import { cities } from "@/lib/cities";
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, WhatsAppIcon } from "./icons";
+import ManageCookiesButton from "./ManageCookiesButton";
 
 export default function Footer() {
   return (
@@ -137,6 +138,9 @@ export default function Footer() {
               <Link href="/cookie-policy/" className="transition-colors duration-200 hover:text-white">
                 Cookie Policy
               </Link>
+            </li>
+            <li>
+              <ManageCookiesButton />
             </li>
           </ul>
         </nav>

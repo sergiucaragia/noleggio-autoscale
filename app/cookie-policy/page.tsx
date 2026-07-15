@@ -3,18 +3,41 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { business } from "@/lib/config";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ManageCookiesButton from "@/components/ManageCookiesButton";
 
 export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy | Noleggio Autoscale",
   description:
-    "Informativa sull'uso dei cookie del sito di Noleggio Autoscale: cookie tecnici e, previo consenso, cookie statistici di Google Analytics.",
+    "Informativa sull'uso dei cookie del sito di Noleggio Autoscale: cookie tecnici e, previo consenso, cookie analitici e di marketing.",
   path: "/cookie-policy",
 });
 
+const cookieTable = [
+  {
+    category: "Necessari",
+    name: "cookie_consent",
+    purpose: "Ricorda le tue preferenze sui cookie, così il banner non ricompare a ogni visita.",
+    duration: "180 giorni",
+  },
+  {
+    category: "Analitici",
+    name: "_ga, _ga_*, _gid (Google Analytics 4)",
+    purpose: "Statistiche aggregate e anonime sull'utilizzo del sito. Attivi solo se acconsenti.",
+    duration: "fino a 2 anni",
+  },
+  {
+    category: "Marketing",
+    name: "es. _fbp (Meta Pixel), se attivato",
+    purpose: "Misurazione dell'efficacia delle campagne pubblicitarie. Attivi solo se acconsenti.",
+    duration: "fino a 90 giorni",
+  },
+];
+
 /**
- * NOTA LEGALE: testo base da validare prima della pubblicazione.
- * Se si attivano GA4/GTM è OBBLIGATORIO integrare un banner di consenso
- * (CMP) conforme alle Linee Guida del Garante — vedi SEO-CHECKLIST.md.
+ * NOTA LEGALE: testo base da far validare da un consulente privacy prima
+ * della pubblicazione definitiva. Il banner di consenso è implementato in
+ * components/CookieConsent.tsx — vedi anche lib/cookieConsent.ts per il
+ * funzionamento tecnico (blocco script, durata del consenso, ecc.).
  */
 export default function CookiePolicyPage() {
   return (
@@ -40,29 +63,68 @@ export default function CookiePolicyPage() {
         </p>
 
         <h2 className="mb-3 mt-8 text-xl font-bold text-brand-900">
-          Cookie utilizzati da questo sito
+          Le categorie di cookie che usiamo
         </h2>
         <p className="mb-4 leading-relaxed text-gray-700">
-          <strong>Cookie tecnici:</strong> questo sito utilizza esclusivamente
-          cookie tecnici necessari al funzionamento, per i quali non è
-          richiesto consenso.
+          Al primo accesso ti chiediamo di scegliere quali categorie
+          autorizzare tramite il banner in basso. Puoi accettare tutto,
+          rifiutare tutto o personalizzare la scelta categoria per
+          categoria. I cookie <strong>Necessari</strong> sono sempre attivi
+          perché indispensabili al funzionamento del sito; tutti gli altri
+          restano disattivati finché non dai il consenso esplicito.
         </p>
-        <p className="mb-4 leading-relaxed text-gray-700">
-          <strong>Cookie statistici e di marketing:</strong> qualora vengano
-          attivati strumenti di analisi (Google Analytics 4) o marketing,
-          i relativi cookie saranno installati solo previo consenso espresso
-          tramite il banner dedicato. L'elenco completo e aggiornato dei
-          cookie di terze parti sarà disponibile in questa pagina.
+
+        <div className="mb-6 overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50">
+                <th className="px-4 py-3 font-semibold text-brand-900">Categoria</th>
+                <th className="px-4 py-3 font-semibold text-brand-900">Cookie</th>
+                <th className="px-4 py-3 font-semibold text-brand-900">Finalità</th>
+                <th className="px-4 py-3 font-semibold text-brand-900">Durata</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cookieTable.map((row) => (
+                <tr key={row.category} className="border-b border-gray-100 last:border-0">
+                  <td className="px-4 py-3 font-medium text-brand-900">{row.category}</td>
+                  <td className="px-4 py-3 text-gray-600">{row.name}</td>
+                  <td className="px-4 py-3 text-gray-600">{row.purpose}</td>
+                  <td className="px-4 py-3 text-gray-600">{row.duration}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mb-4 text-sm text-gray-500">
+          Elenco indicativo: se in futuro attiviamo nuovi strumenti di
+          analisi o marketing, questa tabella verrà aggiornata di
+          conseguenza.
         </p>
 
         <h2 className="mb-3 mt-8 text-xl font-bold text-brand-900">
-          Gestione dei cookie
+          Come gestire le tue preferenze
         </h2>
         <p className="mb-4 leading-relaxed text-gray-700">
-          L'utente può gestire le preferenze sui cookie tramite le impostazioni
-          del proprio browser, ed eliminare in ogni momento i cookie già
-          installati. La disabilitazione dei cookie tecnici può compromettere
-          il corretto funzionamento del sito.
+          Puoi cambiare idea in qualsiasi momento, riaprendo il pannello di
+          consenso da qui:
+        </p>
+        <ManageCookiesButton className="mb-6 inline-flex items-center rounded-lg bg-brand-900 px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-brand-800" />
+        <p className="mb-4 leading-relaxed text-gray-700">
+          Puoi inoltre gestire o eliminare i cookie già installati tramite le
+          impostazioni del tuo browser. La disabilitazione dei cookie
+          tecnici può compromettere il corretto funzionamento del sito.
+        </p>
+
+        <h2 className="mb-3 mt-8 text-xl font-bold text-brand-900">
+          Cookie di terze parti
+        </h2>
+        <p className="mb-4 leading-relaxed text-gray-700">
+          Alcuni cookie analitici o di marketing possono essere installati
+          da servizi di terze parti (es. Google Analytics). Il trattamento
+          dei dati da parte di questi servizi è regolato dalle rispettive
+          informative privacy, che ti invitiamo a consultare sui siti dei
+          rispettivi fornitori.
         </p>
 
         <p className="mb-4 leading-relaxed text-gray-700">

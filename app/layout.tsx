@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import Analytics from "@/components/Analytics";
+import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema } from "@/lib/schema";
 import { business, SITE_URL } from "@/lib/config";
@@ -58,6 +59,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <StickyCTA />
+        <CookieConsent />
       </body>
     </html>
   );

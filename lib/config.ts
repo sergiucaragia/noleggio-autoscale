@@ -37,6 +37,13 @@ export const business = {
   },
 } as const;
 
+/**
+ * Slot di noleggio disponibili nel mese corrente, mostrati nella sezione
+ * countdown "Ultimi noleggi disponibili questo mese" in home. Aggiornare
+ * manualmente questo numero per riflettere la disponibilità reale.
+ */
+export const availableSlotsThisMonth = 6;
+
 export const links = {
   tel: `tel:${business.phone}`,
   whatsapp: `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(

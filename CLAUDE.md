@@ -21,7 +21,7 @@ Next.js App Router + TypeScript + Tailwind CSS 4 (theme tokens defined via `@the
 **Data-driven content**: pages are generated from data files in `lib/`; adding an entry there automatically creates the route, sitemap entry, internal links and JSON-LD:
 
 - `lib/config.ts` — single source of truth for business data (phone, address, hours), `SITE_URL` (from `NEXT_PUBLIC_SITE_URL`), and `absoluteUrl()`
-- `lib/services.ts` — the 4 main services + `autoscalaModels` (18/25/35/45m ladder heights with specs and per-page SEO copy)
+- `lib/services.ts` — the 2 main services (autoscale, transenne) + `autoscalaModels` (24/34/45m ladder heights with specs and per-page SEO copy)
 - `lib/cities.ts` — served cities; each has 3-4 unique `paragraphs` + `extraFaq` to make city pages unique (avoid doorway-page duplication — never copy sentences between cities)
 - `lib/blog.ts` — blog posts as typed content blocks (no CMS/MDX)
 - `lib/schema.ts` — JSON-LD builders (LocalBusiness, Service, FAQPage, BreadcrumbList, Article), rendered via `components/JsonLd.tsx`
@@ -30,6 +30,8 @@ Next.js App Router + TypeScript + Tailwind CSS 4 (theme tokens defined via `@the
 **Routing**: flat SEO slugs at the root. Static folders exist for the 4 main services + pratiche page; `app/[slug]/page.tsx` handles BOTH city pages (`noleggio-autoscale-<città>`) and ladder-height pages (`noleggio-autoscala-XX-metri`) via `generateStaticParams` (`dynamicParams = false`), dispatching to `components/templates/CityTemplate.tsx` or `AutoscalaModelTemplate.tsx`.
 
 **Contact form**: `components/ContactForm.tsx` (React Hook Form + Zod, client) posts to `app/api/contact/route.ts` (re-validates with Zod, honeypot field `website`). Email sending via Resend is stubbed behind a commented block + `RESEND_API_KEY`; without the key, submissions are only logged.
+
+**Cookie consent**: `lib/cookieConsent.ts` holds all the logic (180-day cookie, `CONSENT_EVENTS.CHANGE`/`OPEN` custom events, Google Consent Mode v2 helpers, and `activateScriptsForConsent()` which re-executes any `<script type="text/plain" data-cookie-category="analytics|marketing">` once that category is granted — the pattern to use for third-party snippets pasted outside React's control). `components/CookieConsent.tsx` is the bottom drawer UI; `components/Analytics.tsx` only renders the GA4/GTM `<Script>` tags once `analytics` consent is granted (real blocking, not just Consent Mode). `components/ManageCookiesButton.tsx` (in the footer) reopens the drawer via `CONSENT_EVENTS.OPEN`.
 
 ## Conventions
 

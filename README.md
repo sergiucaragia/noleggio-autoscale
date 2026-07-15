@@ -50,9 +50,10 @@ Usare sempre `next/image` con `width`/`height` espliciti, `priority` solo sull'i
 
 ### 5. Analytics e consenso cookie
 
-- [ ] Impostare `NEXT_PUBLIC_GA_ID` (GA4) e/o `NEXT_PUBLIC_GTM_ID` (GTM) — gli script si attivano da soli quando le variabili sono presenti (`components/Analytics.tsx`)
-- [ ] **Obbligatorio prima di attivarli**: integrare un banner di consenso cookie (CMP, es. Iubenda o Cookiebot) e condizionare il caricamento al consenso
+- [ ] Impostare `NEXT_PUBLIC_GA_ID` (GA4) e/o `NEXT_PUBLIC_GTM_ID` (GTM) in `.env.local`/Vercel
 - [ ] Far validare Privacy Policy e Cookie Policy (testi base in `app/privacy-policy/` e `app/cookie-policy/`) da un consulente
+
+Il banner di consenso cookie è già integrato (`components/CookieConsent.tsx`): GA4/GTM (`components/Analytics.tsx`) vengono caricati SOLO dopo il consenso esplicito alla categoria "Analitici" — nessuna CMP esterna necessaria. Dettagli tecnici (durata del consenso, come bloccare altri script di terze parti, Google Consent Mode v2) sono commentati in `lib/cookieConsent.ts`.
 
 ## Come aggiungere contenuti
 
