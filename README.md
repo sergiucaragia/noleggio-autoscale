@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Noleggio Autoscale — Sito web
 
-## Getting Started
+Sito professionale per il noleggio di autoscale, autogrù, piattaforme aeree e transenne a Torino e provincia. Costruito con Next.js (App Router), TypeScript e Tailwind CSS, ottimizzato per la SEO locale.
 
-First, run the development server:
+## Avvio rapido
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # poi compilare le variabili
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build di produzione: `npm run build` — Lint: `npm run lint`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cose da completare prima del lancio
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Dati aziendali
 
-## Learn More
+Tutti i dati aziendali sono centralizzati in **`lib/config.ts`**: modificandoli lì si aggiornano header, footer, schema JSON-LD, pagina contatti e CTA. Da completare:
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] **P.IVA** (`vatNumber`) — attualmente placeholder `[INSERIRE P.IVA]`
+- [ ] **Ragione sociale completa** (`legalName`)
+- [ ] **Coordinate geografiche** (`geo`) — attualmente approssimative
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Dominio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Acquistare il dominio e impostarlo in `NEXT_PUBLIC_SITE_URL` (in `.env.local` in locale e nelle Environment Variables su Vercel). Il valore attuale `https://www.noleggio-autoscale.it` è un placeholder: canonical, sitemap e Open Graph dipendono da questa variabile.
 
-## Deploy on Vercel
+### 3. Invio email del form preventivo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Il form (`components/ContactForm.tsx` → `app/api/contact/route.ts`) è funzionante ma **l'invio email è da attivare**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Creare un account su [Resend](https://resend.com) (piano gratuito sufficiente)
+2. Verificare il dominio in Resend
+3. `npm install resend`
+4. Impostare `RESEND_API_KEY` in `.env.local` / Vercel
+5. Decommentare il blocco "Invio con Resend" in `app/api/contact/route.ts` e aggiornare il campo `from` con il dominio verificato
+
+Senza API key le richieste vengono solo loggate lato server (comodo in sviluppo).
+
+### 4. Foto reali
+
+Il sito usa gradienti e icone come placeholder. **Sostituire con foto reali dei mezzi appena disponibili**: le foto autentiche (mezzi, team, interventi) sono l'elemento che più aumenta fiducia e conversioni. I punti dove inserirle sono marcati con commenti `TODO FOTO` in:
+
+- `app/page.tsx` (hero della home)
+- `app/noleggio-autoscale/page.tsx` e le altre pagine servizio
+- `components/templates/AutoscalaModelTemplate.tsx` e `CityTemplate.tsx`
+- `app/chi-siamo/page.tsx`
+
+Usare sempre `next/image` con `width`/`height` espliciti, `priority` solo sull'immagine hero, e alt-text descrittivo con keyword naturale (es. "noleggio autoscala 25 metri Torino, trasloco in corso").
+
+### 5. Analytics e consenso cookie
+
+- [ ] Impostare `NEXT_PUBLIC_GA_ID` (GA4) e/o `NEXT_PUBLIC_GTM_ID` (GTM) — gli script si attivano da soli quando le variabili sono presenti (`components/Analytics.tsx`)
+- [ ] **Obbligatorio prima di attivarli**: integrare un banner di consenso cookie (CMP, es. Iubenda o Cookiebot) e condizionare il caricamento al consenso
+- [ ] Far validare Privacy Policy e Cookie Policy (testi base in `app/privacy-policy/` e `app/cookie-policy/`) da un consulente
+
+## Come aggiungere contenuti
+
+L'architettura è data-driven: i contenuti stanno in `lib/`, le pagine si generano da sole.
+
+| Cosa | Dove | Effetto |
+|---|---|---|
+| Nuova città | `lib/cities.ts` | Pagina `/noleggio-autoscale-<città>/`, sitemap, link interni, areaServed |
+| Nuova altezza autoscala | `lib/services.ts` (`autoscalaModels`) | Pagina `/noleggio-autoscala-X-metri/`, sitemap, link |
+| Nuovo articolo blog | `lib/blog.ts` | Pagina `/blog/<slug>/`, sitemap, listing |
+| Dati aziendali | `lib/config.ts` | Ovunque |
+
+Per le pagine città: scrivere 3-4 `paragraphs` con dettagli davvero specifici del comune (quartieri, tipo di edifici, particolarità locali) e una `extraFaq` dedicata — è ciò che rende ogni pagina unica agli occhi di Google. Non copiare frasi tra città.
+
+## Deploy su Vercel
+
+1. Pushare il repository su GitHub
+2. Su [vercel.com](https://vercel.com) → "Add New Project" → importare il repo (framework rilevato automaticamente)
+3. In **Settings → Environment Variables** inserire le variabili di `.env.example`
+4. Deploy — ogni push su `main` pubblica automaticamente
+5. In **Settings → Domains** collegare il dominio acquistato (Vercel guida la configurazione DNS)
+
+## Collegare Google Search Console e Analytics
+
+**Search Console** (indicizzazione):
+1. [search.google.com/search-console](https://search.google.com/search-console) → aggiungi proprietà → tipo "Dominio"
+2. Verifica via record DNS TXT (dal pannello del registrar o da Vercel Domains)
+3. Inviare la sitemap: `https://<dominio>/sitemap.xml`
+
+**Google Analytics 4**:
+1. [analytics.google.com](https://analytics.google.com) → crea proprietà → ottieni il Measurement ID (`G-…`)
+2. Inserirlo in `NEXT_PUBLIC_GA_ID` su Vercel e rideployare
+3. Collegare GA4 a Search Console (Amministrazione → Collegamenti prodotto)
+
+Dopo il lancio seguire **`SEO-CHECKLIST.md`** per le attività post-pubblicazione (Google Business Profile, recensioni, ecc.).
